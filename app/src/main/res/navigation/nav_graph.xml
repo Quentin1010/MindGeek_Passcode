@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainFragment">
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.example.mindgeek_test.MainFragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_MainFragment_to_PasswordManagementFragment"
+            app:destination="@id/PasswordManagementFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_CreatePasswordFragment"
+            app:destination="@id/CreatePasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CreatePasswordFragment"
+        android:name="com.example.mindgeek_test.password.create.CreatePasswordFragment"
+        tools:layout="@layout/form_password_fragment">
+    </fragment>
+
+    <dialog
+        android:id="@+id/DialogRequestPasswordFragment"
+        android:name="com.example.mindgeek_test.password.request.RequestPasswordFragment"
+        tools:layout="@layout/form_password_fragment"
+        >
+        <argument
+            android:name="destination"
+            app:argType="com.example.mindgeek_test.navigation.Destination"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
+        <argument
+            android:name="allowBack"
+            app:argType="boolean"
+            android:defaultValue="true"
+            />
+        <action
+            android:id="@+id/action_DialogRequestPasswordFragment_to_CreatePasswordFragment"
+            app:destination="@id/CreatePasswordFragment"
+            app:popUpTo="@id/DialogRequestPasswordFragment"
+            app:popUpToInclusive="true"/>
+    </dialog>
+
+    <fragment
+        android:id="@+id/PasswordManagementFragment"
+        android:name="com.example.mindgeek_test.password_management.PasswordManagementFragment"
+        tools:layout="@layout/password_management_fragment">
+        <action
+            android:id="@+id/action_PasswordManagementFragment_to_CreatePasswordFragment"
+            app:destination="@id/CreatePasswordFragment"
+            />
+        <action
+            android:id="@+id/action_PasswordManagementFragment_to_DialogRequestPasswordFragment"
+            app:destination="@id/DialogRequestPasswordFragment"
+            >
+        </action>
+    </fragment>
+
+    <action
+        android:id="@+id/openRequestPassword"
+        app:destination="@id/DialogRequestPasswordFragment"
+        />
+
+    <action
+        android:id="@+id/popupToMain"
+        app:popUpTo="@id/MainFragment"
+        />
+
+</navigation>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MindGeek_Test</string>
+
+    <string name="back">Back</string>
+    <string name="lock">Lock</string>
+    <string name="confirm">Confirm</string>
+    <string name="ok">Ok</string>
+
+    <string name="splash_title">MindGeek Technical Assignment</string>
+
+    <string name="turn_off_password">Turn Off Passcode</string>
+    <string name="edit_password">Edit Passcode</string>
+
+    <string name="create_password">Create Passcode</string>
+    <string name="confirm_password">Confirm Passcode</string>
+    <string name="enter_password">Enter Passcode</string>
+    <string name="error_not_filled">There needs to be 4 digits</string>
+    <string name="error_not_same">The passcode doesn\'t correspond</string>
+    <string name="error_incorrect_password">Passcode is incorrect!</string>
+
+    <string name="alert_lock_message">You have been locked away for a minute, please wait before retrying</string>
+
+</resources>
